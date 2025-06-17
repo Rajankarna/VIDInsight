@@ -1,0 +1,8 @@
+Flask
+Flask-Cors
+Werkzeug
+yt-dlp
+google-generativeai
+moviepy
+openai-whisper==20231117
+pip install git+https://github.com/openai/whisper.git

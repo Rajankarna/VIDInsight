@@ -1,0 +1,106 @@
+
+# API Testing File
+# You can use REST Client extension in VS Code to run these requests
+
+### Home route
+GET http://localhost:5000/
+Content-Type: application/json
+
+### User Login
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "email": "admin@example.com",
+  "password": "admin123"
+}
+
+### User Registration
+POST http://localhost:5000/signup
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+### Logout
+GET http://localhost:5000/logout
+
+### Process YouTube Video
+# Note: You'll need to use a form-data request in a real client
+# This is a simplified version for reference
+POST http://localhost:5000/process
+Content-Type: application/json
+
+{
+  "youtube_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+}
+
+### Get Results
+GET http://localhost:5000/results/YOUR_SESSION_ID_HERE
+
+### Ask Question
+POST http://localhost:5000/ask
+Content-Type: application/json
+
+{
+  "session_id": "YOUR_SESSION_ID_HERE",
+  "question": "What is the main topic of this video?"
+}
+
+### Download Transcript
+GET http://localhost:5000/download_transcript/YOUR_SESSION_ID_HERE
+
+### Get User History
+GET http://localhost:5000/history
+
+### Delete Session
+POST http://localhost:5000/delete_session/YOUR_SESSION_ID_HERE
+
+### Submit Bug Report
+POST http://localhost:5000/contact
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "message": "This is a test bug report."
+}
+
+### Get Bug Reports (Admin only)
+GET http://localhost:5000/contact
+
+### Mark Message as Read (Admin only)
+GET http://localhost:5000/mark_message/1
+
+### Delete Message (Admin only)
+POST http://localhost:5000/delete_message/1
+
+### Get About Page
+GET http://localhost:5000/about
+
+### Get Team Page
+GET http://localhost:5000/team
+
+### Update User Profile
+POST http://localhost:5000/update_profile
+Content-Type: application/json
+
+{
+  "username": "newusername",
+  "email": "newemail@example.com"
+}
+
+### Change Password
+POST http://localhost:5000/change_password
+Content-Type: application/json
+
+{
+  "current_password": "currentpassword",
+  "new_password": "newpassword"
+}
+
+### Get Admin Dashboard Stats
+GET http://localhost:5000/admin/stats
